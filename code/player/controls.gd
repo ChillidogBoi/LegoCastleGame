@@ -13,11 +13,13 @@ const HeldActionsMasks = [
 ]
 const DirsMasks = ["MOVE LEFT", "MOVE RIGHT", "MOVE UP", "MOVE DOWN"]
 const Dirs2Masks = ["LEFT", "RIGHT", "UP", "DOWN"]
+const LookDirsMasks = ["LOOK LEFT", "LOOK RIGHT", "LOOK UP", "LOOK DOWN"]
 
 var InputActions: Array = []
 var HeldActions: Array = []
 var dirs: Array = []
 var dirs2: Array = []
+var look_dirs: Array = []
 
 func _ready():
 	await Settings.initialized

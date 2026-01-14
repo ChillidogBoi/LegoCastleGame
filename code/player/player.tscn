@@ -410,7 +410,7 @@ hit_back_faces = false
 transform = Transform3D(-0.04999997, -6.968946e-10, 7.351484e-09, 9.952559e-10, 0.048686694, 0.011384401, -7.317065e-09, 0.011384403, -0.04868668, 0, 0.44506574, -0.5082431)
 
 [node name="LegoRig_001" type="Node3D" parent="mesh/Knight1"]
-transform = Transform3D(0.3690475, -0.9290278, -0.02666517, 0.15397234, 0.032819744, 0.98752993, -0.9165677, -0.36855116, 0.15515666, 0.048000965, -0.20548016, -0.066003025)
+transform = Transform3D(0.36904725, -0.9290279, -0.026665084, 0.153972, 0.032819655, 0.98753, -0.91656786, -0.3685509, 0.15515633, 0.048000965, -0.20548016, -0.066003025)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="mesh/Knight1/LegoRig_001"]
 bones/0/name = "Root"
@@ -719,7 +719,14 @@ alignment = 1
 [node name="keybinds" type="Button" parent="UI/menu/Option"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "    Controls Setup    "
+text = "    Control Setup    "
+
+[node name="back" type="Button" parent="UI/menu/Option"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "    Back    "
 
 [connection signal="pressed" from="UI/menu/Main/resume" to="UI/menu" method="_on_resume_pressed"]
-[connection signal="pressed" from="UI/menu/Main/options" to="UI/menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/menu/Main/options" to="UI/menu" method="_on_options_pressed"]
+[connection signal="pressed" from="UI/menu/Option/keybinds" to="UI/menu" method="_on_keybinds_pressed"]
+[connection signal="pressed" from="UI/menu/Option/back" to="UI/menu" method="_on_opt_back_pressed"]

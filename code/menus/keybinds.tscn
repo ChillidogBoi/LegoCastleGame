@@ -33,7 +33,7 @@ expand_margin_bottom = 2.0
 base_font = ExtResource("3_hk1j7")
 variation_embolden = 0.5
 
-[node name="Keybinds" type="ColorRect"]
+[node name="Keybind" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,6 +49,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -810,7 +814,21 @@ text = "NONE"
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="Device" type="Button" parent="VBoxContainer"]
+[node name="Device" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/Device"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_hk6ch")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "PLAYER 1"
+
+[node name="Label" type="Label" parent="VBoxContainer/Device"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 0, 1, 1)
@@ -819,9 +837,19 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = SubResource("FontVariation_hk6ch")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+text = "CHANGE DEVICE"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/Device"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_hk6ch")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
-text = "CHANGE DEVICE"
+text = "PLAYER 2"
 
 [node name="Reset" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -862,8 +890,21 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
 text = "CANCEL"
 
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
 [node name="Set" type="ColorRect" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="ColorRect" type="ColorRect" parent="Set"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -877,7 +918,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Set"]
+[node name="ColorRect2" type="ColorRect" parent="Set/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -892,7 +933,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="Set/ColorRect2"]
+[node name="Label" type="Label" parent="Set/ColorRect/ColorRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -906,7 +947,7 @@ theme_override_colors/font_color = Color(1, 0, 1, 1)
 text = "Press a Button or Key to set to:"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Set/ColorRect2"]
+[node name="Label2" type="Label" parent="Set/ColorRect/ColorRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -923,7 +964,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "SPECIAL"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Set/ColorRect2"]
+[node name="Label3" type="Label" parent="Set/ColorRect/ColorRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -940,7 +981,7 @@ theme_override_colors/font_color = Color(1, 0, 1, 1)
 text = "Current Mapping:"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Set/ColorRect2"]
+[node name="Label4" type="Label" parent="Set/ColorRect/ColorRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -956,7 +997,7 @@ grow_vertical = 2
 text = "Waiting..."
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Set/ColorRect2"]
+[node name="Label5" type="Label" parent="Set/ColorRect/ColorRect2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -972,3 +1013,9 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.51718444, 0.5171845, 0.51718444, 1)
 text = "(ESC to Cancel)"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Device/p1" to="." method="_on_p1_device_pressed"]
+[connection signal="pressed" from="VBoxContainer/Device/p2" to="." method="_on_p_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="VBoxContainer/Accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

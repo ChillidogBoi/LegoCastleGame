@@ -1,0 +1,974 @@
+[gd_scene load_steps=8 format=3 uid="uid://v480dkvlibqo"]
+
+[ext_resource type="Script" uid="uid://b3puhlxj1bbhd" path="res://code/menus/keybinds.gd" id="1_1ildl"]
+[ext_resource type="FontVariation" uid="uid://dccmjgopa6omf" path="res://assets/font_var.tres" id="2_deaoo"]
+[ext_resource type="FontFile" uid="uid://dnlf2bwy0ixxn" path="res://assets/licenses/WalterTurncoat-Regular.ttf" id="3_hk1j7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kmr6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5fcci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyhmy"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="FontVariation" id="FontVariation_hk6ch"]
+base_font = ExtResource("3_hk1j7")
+variation_embolden = 0.5
+
+[node name="Keybinds" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_1ildl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_deaoo")
+text = "CONTROL SETUP"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="keys" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Move Left" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Move Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "A"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Move Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "MOVE LEFT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Move Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Move Right" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Move Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "D"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Move Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "MOVE RIGHT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Move Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Move Up" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Move Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "W"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Move Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "MOVE UP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Move Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Move Down" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Move Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "S"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Move Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "MOVE DOWN"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Move Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Tag" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "U"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "TAG"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Special" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Special"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "K"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Special"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "SPECIAL"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Special"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Jump" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "J"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "JUMP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Action" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Action"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "H"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Action"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "ACTION"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Action"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Chr T Down" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Chr T Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "CTRL"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Chr T Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "CHARACTER TOGGLE DOWN"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Chr T Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Chr T Up" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Chr T Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "SPACE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Chr T Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "CHARACTER TOGGLE UP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Chr T Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Pause" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Pause"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "ENTER"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Pause"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "START/PAUSE"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Pause"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Map" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "M"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "SHOW MAP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Look Left" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Look Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "L"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Look Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "LOOK LEFT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Look Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Look Right" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Look Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "APOSTROPHE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Look Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "LOOK RIGHT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Look Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Look Up" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Look Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "P"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Look Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "LOOK UP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Look Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Look Down" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Look Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "SEMICOLON"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Look Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "LOOK DOWN"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Look Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Up" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "UP"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Up"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Down" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "DOWN"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Down"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Left" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "LEFT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Right" type="HBoxContainer" parent="VBoxContainer/keys"]
+layout_mode = 2
+
+[node name="p1" type="Button" parent="VBoxContainer/keys/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="Label" type="Label" parent="VBoxContainer/keys/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+text = "RIGHT"
+horizontal_alignment = 1
+
+[node name="p2" type="Button" parent="VBoxContainer/keys/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "NONE"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Device" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_hk6ch")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "CHANGE DEVICE"
+
+[node name="Reset" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_hk6ch")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "RESET TO DEFAULT"
+
+[node name="Accept" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_hk6ch")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "ACCEPT"
+
+[node name="Cancel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_deaoo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+text = "CANCEL"
+
+[node name="Set" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Set"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -97.5
+offset_right = 197.5
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Set/ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 23.5
+offset_right = 119.0
+offset_bottom = 48.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+text = "Press a Button or Key to set to:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Set/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -49.0
+offset_right = 119.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "SPECIAL"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Set/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -13.5
+offset_right = 119.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+text = "Current Mapping:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Set/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Waiting..."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Set/ColorRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -42.5
+offset_right = 119.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.51718444, 0.5171845, 0.51718444, 1)
+text = "(ESC to Cancel)"
+horizontal_alignment = 1

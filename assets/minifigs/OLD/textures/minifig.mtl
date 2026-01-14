@@ -1,0 +1,122 @@
+# Blender 4.5.2 LTS MTL File: 'minifig.blend'
+# www.blender.org
+
+newmtl Arms
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd Arms.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Arms.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd Arms.002.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Face
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Pjcpj/Tools/godot/projects/kenney_brick_kit/assets/minifigs/smile.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_d C:/Users/Pjcpj/Tools/godot/projects/kenney_brick_kit/assets/minifigs/smile.png
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Hands
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd hands.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Hands.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd hands.003.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Head
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd head.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Hips
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd legs.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Legs
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd legs.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Legs.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd legs.002.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg
+
+newmtl Torso
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd torso.png
+map_Ks plastic_specular.jpg
+map_refl plastic_metallic.jpg
+map_Bump -bm 1.000000 plastic_normal_opengl.jpg

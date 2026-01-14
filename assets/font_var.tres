@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dccmjgopa6omf"]
+
+[ext_resource type="FontFile" uid="uid://dnlf2bwy0ixxn" path="res://assets/licenses/WalterTurncoat-Regular.ttf" id="1_l3nyr"]
+
+[resource]
+base_font = ExtResource("1_l3nyr")
+variation_embolden = 0.5

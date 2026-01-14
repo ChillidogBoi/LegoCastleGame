@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt7jw3yi3vjox"]
+
+[ext_resource type="ArrayMesh" uid="uid://wuocd2kqtwhd" path="res://assets/minifigs/Knight1/knight1.obj" id="1_iwpo4"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="mesh" type="Node3D" parent="."]
+
+[node name="Knight1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_iwpo4")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bjqq6uf8bn1fr"]
+[gd_scene load_steps=34 format=4 uid="uid://bjqq6uf8bn1fr"]
 
 [ext_resource type="Texture2D" uid="uid://c0wumysg7nlmi" path="res://assets/minifigs/Knight1/textures/1/official/decoration/3817d194.png" id="1_cuhoj"]
 [ext_resource type="Script" uid="uid://cpq8rhdhp44my" path="res://code/player/char_props.gd" id="1_tbe4y"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://5uvlny22c2dx" path="res://code/player/States/walk.gd" id="13_km5ca"]
 [ext_resource type="Script" uid="uid://d1eq3xmwtppis" path="res://code/player/States/jump.gd" id="14_uwe4r"]
 [ext_resource type="Script" uid="uid://djpga4akflnx7" path="res://code/player/States/fall.gd" id="15_km5ca"]
+[ext_resource type="PackedScene" uid="uid://v480dkvlibqo" path="res://code/menus/keybinds.tscn" id="15_uwe4r"]
 [ext_resource type="Script" uid="uid://cqi14l8o2xe00" path="res://code/player/menu.gd" id="17_vkitx"]
 [ext_resource type="Script" uid="uid://dm8rp1x8i1ldl" path="res://code/player/States/roll.gd" id="18_uqm86"]
 
@@ -407,10 +408,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 1.6295965)
 hit_back_faces = false
 
 [node name="Knight1" type="Node3D" parent="mesh"]
-transform = Transform3D(-0.04999997, -6.968946e-10, 7.351484e-09, 9.952559e-10, 0.048686694, 0.011384401, -7.317065e-09, 0.011384403, -0.04868668, 0, 0.44506574, -0.5082431)
+transform = Transform3D(-0.04999997, -6.968946e-10, 7.3514834e-09, 9.952559e-10, 0.048686694, 0.0113844, -7.317065e-09, 0.011384403, -0.048686676, 0, 0.44506574, -0.5082431)
 
 [node name="LegoRig_001" type="Node3D" parent="mesh/Knight1"]
-transform = Transform3D(0.36904725, -0.9290279, -0.026665084, 0.153972, 0.032819655, 0.98753, -0.91656786, -0.3685509, 0.15515633, 0.048000965, -0.20548016, -0.066003025)
+transform = Transform3D(0.36904666, -0.92902815, -0.026665024, 0.15397201, 0.03281962, 0.98753, -0.9165681, -0.36855033, 0.15515634, 0.048000965, -0.20548016, -0.066003025)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="mesh/Knight1/LegoRig_001"]
 bones/0/name = "Root"
@@ -725,6 +726,11 @@ text = "    Control Setup    "
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "    Back    "
+
+[node name="Keybind" parent="UI/menu" node_paths=PackedStringArray("p1_controls_node") instance=ExtResource("15_uwe4r")]
+visible = false
+layout_mode = 1
+p1_controls_node = NodePath("../../../controls")
 
 [connection signal="pressed" from="UI/menu/Main/resume" to="UI/menu" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI/menu/Main/options" to="UI/menu" method="_on_options_pressed"]

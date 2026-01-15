@@ -33,7 +33,7 @@ func refresh_controls(p):
 	dirs = []
 	dirs2 = []
 	look_dirs = []
-	var con: ControlScheme = ControlScheme.new()
+	var con: ControlScheme
 	if p: con = Settings.controls_p2
 	else: con = Settings.controls_p1
 	device = con.device
@@ -43,6 +43,7 @@ func refresh_controls(p):
 		HeldActions.append(con.keybinds[i])
 	for i in DirsMasks:
 		dirs.append(con.keybinds[i])
+		
 	for i in Dirs2Masks:
 		dirs2.append(con.keybinds[i])
 	for i in LookDirsMasks:
@@ -57,7 +58,7 @@ func get_input(last: InputList) -> InputList:
 	if dirs[0] is Array:
 		input.direction.x = Input.get_joy_axis(device, dirs[0][0])
 		input.direction.y = Input.get_joy_axis(device, dirs[2][0])
-		if abs(input.direction).length() < 0.01: input.direction = Vector2.ZERO
+		if abs(input.direction).length() < 0.02: input.direction = Vector2.ZERO
 	else:
 		for i in dirs:
 			dirs_to_nums.append(input_to_bin(i))
@@ -89,12 +90,13 @@ func get_input(last: InputList) -> InputList:
 
 ##Returns 1 or 0 based on given Input from controller or keyboard.
 ##"i" is the enumerator value of the key or button to poll
-##"d" is optionally the joypad id
+##"d" is optionally the joypad id or -2 for keyboard
 func input_to_bin(i, d:int = -1) -> int:
 	var out = 0
 
 	if d != -1:
-		if Input.is_joy_button_pressed(d, i): out = 1
+		if d == -2 and Input.is_key_pressed(i): out = 1
+		if d != -2 and Input.is_joy_button_pressed(d, i): out = 1
 	elif device is int:
 		if Input.is_joy_button_pressed(device, i): out = 1
 	else:

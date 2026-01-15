@@ -16,7 +16,7 @@ const blank_defaults = ["NONE", "NONE", "NONE", "NONE", "NONE", "NONE", "NONE", 
 const xbox_defaults = [
 	"LEFT STICK LEFT", "LEFT STICK RIGHT", "LEFT STICK UP", "LEFT STICK DOWN", "(Y)", "(B)", "(A)", "(X)",
 	"[  L  ]", "[  R  ]", "START ▶️", "BACK ◀️", "RIGHT STICK LEFT", "RIGHT STICK RIGHT", "RIGHT STICK UP",
-	"RIGHT STICK DOWN", "D-PAD LEFT", "D-PAD RIGHT", "D-PAD UP", "D-PAD DOWN",
+	"RIGHT STICK DOWN", "D-PAD UP", "D-PAD DOWN", "D-PAD LEFT", "D-PAD RIGHT",
 ]
 
 @export var p1_controls_node: InputController
@@ -32,16 +32,102 @@ var p2_hold: ControlScheme
 var buttons_held: Array = []
 var button_to_change: Button
 
+var last_inputs: Array = []
+
+func _ready():
+	await Settings.initialized
+	for b in get_child(0).get_child(3).get_children().size():
+		var x = Settings.controls_p1.keybinds[get_child(0).get_child(3).get_child(b).get_child(1).text]
+		if Settings.controls_p1.device is int:
+			changing = get_child(0).get_child(3).get_child(b).get_child(1).text
+			if x is Array: stick([null, null, x[0]])
+			else:
+				button_to_change = get_child(0).get_child(3).get_child(b).get_child(0)
+				rename_button(["button", null, x])
+		else:
+			button_to_change = get_child(0).get_child(3).get_child(b).get_child(0)
+			rename_button(["key", null, x])
+		
+		if Settings.controls_p2:
+			x = Settings.controls_p2.keybinds[get_child(0).get_child(3).get_child(b).get_child(1).text]
+			if Settings.controls_p2.device is int:
+				changing = get_child(0).get_child(3).get_child(b).get_child(1).text
+				if x is Array: stick([null, null, x[0]])
+				else:
+					button_to_change = get_child(0).get_child(3).get_child(b).get_child(2)
+					rename_button(["button", null, x])
+			else:
+				button_to_change = get_child(0).get_child(3).get_child(b).get_child(2)
+				rename_button(["key", null, x])
+		
+		changing = ""
+		button_to_change = null
+		
+
 func _process(delta):
+	for b in [$VBoxContainer/Device/p1, $VBoxContainer/Device/p2, $VBoxContainer/Reset,
+	$VBoxContainer/Accept, $VBoxContainer/Cancel]:
+		focus_press_allow(b)
 	for b in get_child(0).get_child(3).get_children():
+		focus_press_allow(b.get_child(0))
+		focus_press_allow(b.get_child(2))
 		if b.get_child(0).button_pressed:
 			buttons_held.append([b.get_child(0), b.get_child(0).text])
 			button_to_change = b.get_child(0)
 			remap_button(b.get_child(1).text, 1)
+			b.get_child(0).button_pressed = false
 		elif b.get_child(2).button_pressed:
 			button_to_change = b.get_child(2)
 			buttons_held.append([b.get_child(0), b.get_child(0).text])
 			remap_button(b.get_child(1).text, 2)
+			b.get_child(2).button_pressed = false
+
+##Adds a shortcut to whatever's focused with the "JUMP" and "START/PAUSE" actions
+##and removes it from whatever's not.
+##Probably not the best way to do this, but it's worked for me in the past.
+func focus_press_allow(b:Button):
+	if not b.shortcut:
+		b.shortcut = Shortcut.new()
+	if not b.has_focus():
+		if b.shortcut.events != []:
+			b.shortcut.events = []
+		return
+	
+	if b.shortcut.events != []:
+		wasd_menu(b)
+		return
+	b.shortcut = Shortcut.new()
+	b.shortcut.events.resize(2)
+	if Settings.controls_p1.device is int:
+		b.shortcut.events[0] = InputEventJoypadButton.new()
+		b.shortcut.events[0].button_index = Settings.controls_p1.keybinds["JUMP"]
+		b.shortcut.events[1] = InputEventJoypadButton.new()
+		b.shortcut.events[1].button_index = Settings.controls_p1.keybinds["START/PAUSE"]
+	else:
+		b.shortcut.events[0] = InputEventKey.new()
+		b.shortcut.events[0].keycode = Settings.controls_p1.keybinds["JUMP"]
+		b.shortcut.events[1] = InputEventKey.new()
+		b.shortcut.events[1].keycode = Settings.controls_p1.keybinds["START/PAUSE"]
+
+func wasd_menu(b:Button):
+	var menu_dirs = [
+		[[Settings.controls_p1.keybinds["UP"],Settings.controls_p1.keybinds["MOVE UP"]], SIDE_TOP],
+		[[Settings.controls_p1.keybinds["DOWN"],Settings.controls_p1.keybinds["MOVE DOWN"]], SIDE_BOTTOM],
+		[[Settings.controls_p1.keybinds["LEFT"],Settings.controls_p1.keybinds["MOVE LEFT"]], SIDE_LEFT],
+		[[Settings.controls_p1.keybinds["RIGHT"],Settings.controls_p1.keybinds["MOVE RIGHT"]], SIDE_RIGHT],
+	]
+	
+	for n in menu_dirs:
+		for f in n[0]:
+			if f is Array: return
+			if not last_inputs.has(f):
+				if p1_controls_node.input_to_bin(f) and b.find_valid_focus_neighbor(n[1]):
+					b.find_valid_focus_neighbor(n[1]).grab_focus()
+			
+			if p1_controls_node.input_to_bin(f): last_inputs.append(f)
+			if p1_controls_node.input_to_bin(f) == 0 and last_inputs.has(f):
+				last_inputs.erase(f)
+			
 
 func remap_button(b: String, p: int):
 	if not p1_hold:
@@ -147,19 +233,25 @@ func _input(event):
 	get_child(1).visible = false
 	waiting = false
 	
-	if ev[0] == "key": button_to_change.text = event.as_text().to_upper()
+	rename_button(ev)
+
+func rename_button(ev: Array):
+	if ev[0] == "key":
+		var event = InputEventKey.new()
+		event.keycode = ev[2]
+		button_to_change.text = event.as_text().to_upper()
 	elif ev[0] == "button":
-		if xbox_buttons.size() < ev[2]: button_to_change.text = xbox_buttons[ev[2]]
+		if xbox_buttons.size() > ev[2]: button_to_change.text = xbox_buttons[ev[2]][0]
 		else: button_to_change.text = str("BUTTON ", ev[2]).to_upper()
 
 
 func stick(ev) -> Array:
 	var ans: Array = []
 	var stik: int = 0
-	var txt: String = "Left Stick "
+	var txt: String = "LEFT STICK "
 	if ev[2] > 1:
 		stik = 2
-		txt = "Right Stick "
+		txt = "RIGHT STICK "
 	if ev[2] > 3: return []
 	if changing.begins_with("MOVE"):
 		for n in ["MOVE LEFT","MOVE RIGHT"]:
@@ -168,15 +260,15 @@ func stick(ev) -> Array:
 			ans.append([n, [stik + 1]])
 		
 		if player == 1: 
-			$"VBoxContainer/keys/Move Left/p1".text = str(txt, "Left")
-			$"VBoxContainer/keys/Move Right/p1".text = str(txt, "Right")
-			$"VBoxContainer/keys/Move Up/p1".text = str(txt, "Up")
-			$"VBoxContainer/keys/Move Down/p1".text = str(txt, "Down")
+			$"VBoxContainer/keys/Move Left/p1".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Move Right/p1".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Move Up/p1".text = str(txt, "UP")
+			$"VBoxContainer/keys/Move Down/p1".text = str(txt, "DOWN")
 		if player == 2: 
-			$"VBoxContainer/keys/Move Left/p2".text = str(txt, "Left")
-			$"VBoxContainer/keys/Move Right/p2".text = str(txt, "Right")
-			$"VBoxContainer/keys/Move Up/p2".text = str(txt, "Up")
-			$"VBoxContainer/keys/Move Down/p2".text = str(txt, "Down")
+			$"VBoxContainer/keys/Move Left/p2".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Move Right/p2".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Move Up/p2".text = str(txt, "UP")
+			$"VBoxContainer/keys/Move Down/p2".text = str(txt, "DOWN")
 		
 	elif changing.begins_with("LOOK"):
 		for n in ["LOOK LEFT","LOOK RIGHT"]:
@@ -185,15 +277,15 @@ func stick(ev) -> Array:
 			ans.append([n, [stik + 1]])
 		
 		if player == 1: 
-			$"VBoxContainer/keys/Look Left/p1".text = str(txt, "Left")
-			$"VBoxContainer/keys/Look Right/p1".text = str(txt, "Right")
-			$"VBoxContainer/keys/Look Up/p1".text = str(txt, "Up")
-			$"VBoxContainer/keys/Look Down/p1".text = str(txt, "Down")
+			$"VBoxContainer/keys/Look Left/p1".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Look Right/p1".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Look Up/p1".text = str(txt, "UP")
+			$"VBoxContainer/keys/Look Down/p1".text = str(txt, "DOWN")
 		if player == 2: 
-			$"VBoxContainer/keys/Look Left/p2".text = str(txt, "Left")
-			$"VBoxContainer/keys/Look Right/p2".text = str(txt, "Right")
-			$"VBoxContainer/keys/Look Up/p2".text = str(txt, "Up")
-			$"VBoxContainer/keys/Look Down/p2".text = str(txt, "Down")
+			$"VBoxContainer/keys/Look Left/p2".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Look Right/p2".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Look Up/p2".text = str(txt, "UP")
+			$"VBoxContainer/keys/Look Down/p2".text = str(txt, "DOWN")
 	else:
 		for n in ["UP","DOWN"]:
 			ans.append([n, [stik + 1]])
@@ -201,15 +293,15 @@ func stick(ev) -> Array:
 			ans.append([n, [stik]])
 		
 		if player == 1: 
-			$"VBoxContainer/keys/Left/p1".text = str(txt, "Left")
-			$"VBoxContainer/keys/Right/p1".text = str(txt, "Right")
-			$"VBoxContainer/keys/Up/p1".text = str(txt, "Up")
-			$"VBoxContainer/keys/Down/p1".text = str(txt, "Down")
+			$"VBoxContainer/keys/Left/p1".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Right/p1".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Up/p1".text = str(txt, "UP")
+			$"VBoxContainer/keys/Down/p1".text = str(txt, "DOWN")
 		if player == 2: 
-			$"VBoxContainer/keys/Left/p2".text = str(txt, "Left")
-			$"VBoxContainer/keys/Right/p2".text = str(txt, "Right")
-			$"VBoxContainer/keys/Up/p2".text = str(txt, "Up")
-			$"VBoxContainer/keys/Down/p2".text = str(txt, "Down")
+			$"VBoxContainer/keys/Left/p2".text = str(txt, "LEFT")
+			$"VBoxContainer/keys/Right/p2".text = str(txt, "RIGHT")
+			$"VBoxContainer/keys/Up/p2".text = str(txt, "UP")
+			$"VBoxContainer/keys/Down/p2".text = str(txt, "DOWN")
 	
 	return ans
 
@@ -218,18 +310,22 @@ func _on_accept_pressed():
 	p2_hold = null
 	visible = false
 	get_parent().find_child("Option").visible = true
+	get_parent().find_child("Option").get_child(0).grab_focus()
 	p1_controls_node.refresh_controls(0)
-	if p2_controls_node: p2_controls_node.refresh_controls(1)
+	ResourceSaver.save(Settings.controls_p1, "user://control_scheme_1.tres")
+	if p2_controls_node:
+		p2_controls_node.refresh_controls(1)
+		ResourceSaver.save(Settings.controls_p2, "user://control_scheme_2.tres")
 
 func _on_cancel_pressed():
-	if not p1_hold: return
-	print(p1_hold)
-	Settings.controls_p1 = p1_hold
-	Settings.controls_p2 = p2_hold
-	p1_hold = null
-	p2_hold = null
+	if p1_hold:
+		Settings.controls_p1 = p1_hold
+		Settings.controls_p2 = p2_hold
+		p1_hold = null
+		p2_hold = null
 	visible = false
 	get_parent().find_child("Option").visible = true
+	get_parent().find_child("Option").get_child(0).grab_focus()
 	p1_controls_node.refresh_controls(0)
 	if p2_controls_node: p2_controls_node.refresh_controls(1)
 	for n in buttons_held:

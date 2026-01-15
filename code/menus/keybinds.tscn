@@ -76,6 +76,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Move Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -83,6 +84,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "A"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Move Left"]
@@ -98,6 +100,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Move Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -105,6 +108,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Move Right" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -113,6 +117,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Move Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -120,6 +125,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "D"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Move Right"]
@@ -135,6 +141,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Move Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -142,6 +149,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Move Up" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -157,6 +165,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "W"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Move Up"]
@@ -179,6 +188,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Move Down" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -194,6 +204,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "S"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Move Down"]
@@ -216,6 +227,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Tag" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -231,6 +243,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "U"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Tag"]
@@ -253,6 +266,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Special" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -261,6 +275,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Special"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -268,6 +283,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "K"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Special"]
@@ -283,6 +299,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Special"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -290,6 +307,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Jump" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -298,6 +316,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Jump"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -305,6 +324,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "J"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Jump"]
@@ -320,6 +340,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Jump"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -327,6 +348,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Action" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -335,6 +357,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Action"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -342,6 +365,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "H"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Action"]
@@ -357,6 +381,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Action"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -364,6 +389,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Chr T Down" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -372,6 +398,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Chr T Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -379,6 +406,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "CTRL"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Chr T Down"]
@@ -394,6 +422,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Chr T Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -401,6 +430,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Chr T Up" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -409,6 +439,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Chr T Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -416,6 +447,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "SPACE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Chr T Up"]
@@ -431,6 +463,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Chr T Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -438,6 +471,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Pause" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -446,6 +480,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Pause"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -453,6 +488,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "ENTER"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Pause"]
@@ -468,6 +504,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Pause"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -475,6 +512,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Map" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -483,6 +521,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Map"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -490,6 +529,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "M"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Map"]
@@ -505,6 +545,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Map"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -512,6 +553,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Look Left" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -520,6 +562,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Look Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -527,6 +570,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "L"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Look Left"]
@@ -542,6 +586,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Look Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -549,6 +594,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Look Right" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -557,6 +603,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Look Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -564,6 +611,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "APOSTROPHE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Look Right"]
@@ -579,6 +627,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Look Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -586,6 +635,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Look Up" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -594,6 +644,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Look Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -601,6 +652,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "P"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Look Up"]
@@ -616,6 +668,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Look Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -623,6 +676,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Look Down" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -631,6 +685,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Look Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -638,6 +693,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "SEMICOLON"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Look Down"]
@@ -653,6 +709,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Look Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -660,6 +717,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Up" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -668,6 +726,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -675,6 +734,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Up"]
@@ -690,6 +750,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Up"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -697,6 +758,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Down" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -705,6 +767,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -712,6 +775,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Down"]
@@ -727,6 +791,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Down"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -734,6 +799,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Left" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -742,6 +808,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -749,6 +816,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Left"]
@@ -764,6 +832,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Left"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -771,6 +840,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Right" type="HBoxContainer" parent="VBoxContainer/keys"]
@@ -779,6 +849,7 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/keys/Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -786,6 +857,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="Label" type="Label" parent="VBoxContainer/keys/Right"]
@@ -801,6 +873,7 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/keys/Right"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_deaoo")
@@ -808,6 +881,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0kmr6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5fcci")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyhmy")
+toggle_mode = true
 text = "NONE"
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
@@ -820,6 +894,8 @@ layout_mode = 2
 [node name="p1" type="Button" parent="VBoxContainer/Device"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../p2")
+focus_neighbor_bottom = NodePath("../../Reset")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = SubResource("FontVariation_hk6ch")
 theme_override_font_sizes/font_size = 16
@@ -843,6 +919,8 @@ horizontal_alignment = 1
 [node name="p2" type="Button" parent="VBoxContainer/Device"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../p1")
+focus_neighbor_bottom = NodePath("../../Reset")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = SubResource("FontVariation_hk6ch")
 theme_override_font_sizes/font_size = 16
@@ -854,6 +932,10 @@ text = "PLAYER 2"
 [node name="Reset" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Device/p1")
+focus_neighbor_top = NodePath("../Device/p1")
+focus_neighbor_right = NodePath("../Device/p2")
+focus_neighbor_bottom = NodePath("../Accept")
 theme_override_colors/font_color = Color(1, 0, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1

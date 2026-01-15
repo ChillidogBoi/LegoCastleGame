@@ -656,6 +656,7 @@ mouse_filter = 2
 
 [node name="resume" type="Button" parent="UI/menu/Main"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../options")
 theme_override_font_sizes/font_size = 50
 text = "    Resume    "
 
@@ -736,3 +737,5 @@ p1_controls_node = NodePath("../../../controls")
 [connection signal="pressed" from="UI/menu/Main/options" to="UI/menu" method="_on_options_pressed"]
 [connection signal="pressed" from="UI/menu/Option/keybinds" to="UI/menu" method="_on_keybinds_pressed"]
 [connection signal="pressed" from="UI/menu/Option/back" to="UI/menu" method="_on_opt_back_pressed"]
+
+[editable path="UI/menu/Keybind"]
